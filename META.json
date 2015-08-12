@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Object for logging to pipe output",
    "author" : [
       "yowcow <yowcow@cpan.org>"
    ],
@@ -42,16 +42,22 @@
       },
       "runtime" : {
          "requires" : {
+            "Log::Dispatch" : "0",
+            "Scalar::Util" : "0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
+            "File::Temp" : "0",
             "Test::More" : "0.98"
          }
       }
    },
    "release_status" : "unstable",
    "version" : "0.01",
+   "x_contributors" : [
+      "yowcow <yowcow@gmail.com>"
+   ],
    "x_serialization_backend" : "JSON::PP version 2.27203"
 }
