@@ -3,11 +3,12 @@ use utf8;
 use warnings;
 use File::Temp qw(tempdir);
 use Log::Dispatch::Pipe;
+use Test::Exception;
 use Test::More;
 
 my $tmp = tempdir(CLEANUP => 1);
 
-subtest 'Test log_message' => sub {
+subtest 'Test log_message output' => sub {
     my $output_file = "${tmp}/test.log";
 
     subtest 'Output log' => sub {
@@ -34,6 +35,26 @@ subtest 'Test log_message' => sub {
 あいうえお
 かきくけこ
 END
+    };
+};
+
+subtest 'Test log_message fails' => sub {
+
+    subtest 'Fails if output_to is invald' => sub {
+        local *STDERR;
+        open STDERR, '>', "${tmp}/stderr"
+            or die "Failed opening file: $!";
+
+        my $log = Log::Dispatch::Pipe->new(
+            min_level   => 'info',
+            output_to   => 'hogehoge',
+            try_at_init => 0,
+        );
+
+        dies_ok {
+            $log->log(level => 'info', message => 'Should fail')
+        }
+        qr|Failed opening pipe|;
     };
 };
 
