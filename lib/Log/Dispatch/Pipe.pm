@@ -92,7 +92,7 @@ The constructor takes the following parameters in addition to the standard param
 
 =item output_to :Str
 
-A process to be created via pipe, like "| cronolog path/to/file.log".
+A process to be created via pipe, like "cronolog path/to/file.log".
 
 =item binmode :Str
 
@@ -100,7 +100,7 @@ A layer name to be passed to binmode, like ":utf8".  Default is none.
 
 =item try_at_init :Int
 
-If set to C<1>, a file handle is created to make sure it can be created at initialization.  Default is 0.
+If set to C<1>, a file handle is created to make sure it can be created at initialization.  Default is C<0>.
 
 =back
 
