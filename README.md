@@ -30,11 +30,15 @@ The constructor takes the following parameters in addition to the standard param
 
 - output\_to :Str
 
-    A process to be created via pipe, like "| cronolog path/to/file.log".
+    A process to be created via pipe, like "cronolog path/to/file.log".
 
 - binmode :Str
 
-    A layer name to be passed to binmode, like ":utf8".
+    A layer name to be passed to binmode, like ":utf8".  Default is none.
+
+- try\_at\_init :Int
+
+    If set to `1`, a file handle is created to make sure it can be created at initialization.  Default is `0`.
 
 # SEE ALSO
 
