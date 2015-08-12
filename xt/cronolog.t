@@ -25,7 +25,7 @@ subtest 'Test output to cronolog' => sub {
     };
 
     subtest 'Check log' => sub {
-        my $file = "${tmp}/${date}/test.log";
+        my $file    = "${tmp}/${date}/test.log";
         my $content = do {
             open my $fh, '<', $file or die "Failed opening file: $!";
             local $/ = undef;

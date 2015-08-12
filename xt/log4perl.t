@@ -39,7 +39,7 @@ subtest 'Test logging with logger' => sub {
     };
 
     subtest 'Check log' => sub {
-        my $file = "${tmp}/${date}/hoge.log";
+        my $file    = "${tmp}/${date}/hoge.log";
         my $content = do {
             open my $fh, '<', $file or die $!;
             local $/ = undef;
