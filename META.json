@@ -55,6 +55,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/yowcow/p5-Log-Dispatch-Pipe/issues"
+      },
+      "homepage" : "https://github.com/yowcow/p5-Log-Dispatch-Pipe",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/yowcow/p5-Log-Dispatch-Pipe.git",
+         "web" : "https://github.com/yowcow/p5-Log-Dispatch-Pipe"
+      }
+   },
    "version" : "0.01",
    "x_contributors" : [
       "yowcow <yowcow@gmail.com>"

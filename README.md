@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/yowcow/p5-Log-Dispatch-Pipe.svg?branch=master)](https://travis-ci.org/yowcow/p5-Log-Dispatch-Pipe)
 # NAME
 
 Log::Dispatch::Pipe - Object for logging to pipe output
@@ -29,11 +30,15 @@ The constructor takes the following parameters in addition to the standard param
 
 - output\_to :Str
 
-    A process to be created via pipe.
+    A process to be created via pipe, like "| cronolog path/to/file.log".
 
 - binmode :Str
 
     A layer name to be passed to binmode, like ":utf8".
+
+# SEE ALSO
+
+[Log::Dispatch](https://metacpan.org/pod/Log::Dispatch)
 
 # LICENSE
 
