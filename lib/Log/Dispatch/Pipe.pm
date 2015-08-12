@@ -22,19 +22,29 @@ sub new {
 
 sub _init {
     my ($self, %params) = @_;
+
     $self->{output_to} = $params{output_to};
     $self->{binmode}   = $params{binmode};
+
+    $self->_open_handle if $params{try_at_init};
+}
+
+sub _open_handle {
+    my $self = shift;
+
+    open my $fh, '|' . $self->{output_to}
+        or die "Failed opening pipe: $!";
+
+    binmode $fh, $self->{binmode}
+        if $self->{binmode};
+
+    $fh;
 }
 
 sub log_message {
     my ($self, %params) = @_;
 
-    my $fh = $self->{fh} || do {
-        open my $fh, '|' . $self->{output_to}
-            or die "Failed opening pipe: $!";
-        binmode $fh, $self->{binmode} if $self->{binmode};
-        $fh;
-    };
+    my $fh = $self->{fh} || $self->_open_handle;
 
     print $fh $params{message};
 }
@@ -86,7 +96,11 @@ A process to be created via pipe, like "| cronolog path/to/file.log".
 
 =item binmode :Str
 
-A layer name to be passed to binmode, like ":utf8".
+A layer name to be passed to binmode, like ":utf8".  Default is none.
+
+=item try_at_init :Int
+
+If set to C<1>, a file handle is created to make sure it can be created at initialization.  Default is 0.
 
 =back
 

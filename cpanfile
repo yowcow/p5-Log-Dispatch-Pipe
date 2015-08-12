@@ -5,6 +5,7 @@ requires 'Scalar::Util';
 
 on 'test' => sub {
     requires 'File::Temp';
+    requires 'Test::Exception';
     requires 'Test::More', '0.98';
 };
 
