@@ -35,7 +35,7 @@ sub log_message {
         $fh;
     };
 
-    print $fh $params{message} . "\n";
+    print $fh $params{message};
 }
 
 sub DESTROY {
