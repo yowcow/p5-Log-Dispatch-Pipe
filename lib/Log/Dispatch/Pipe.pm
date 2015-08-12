@@ -2,11 +2,12 @@ package Log::Dispatch::Pipe;
 use 5.008001;
 use strict;
 use warnings;
+our $VERSION = "0.01";
+
+use Log::Dispatch 2.00;
 use parent 'Log::Dispatch::Output';
 
 use Scalar::Util qw(openhandle);
-
-our $VERSION = "0.01";
 
 sub new {
     my ($proto, %params) = @_;
@@ -81,13 +82,17 @@ The constructor takes the following parameters in addition to the standard param
 
 =item output_to :Str
 
-A process to be created via pipe.
+A process to be created via pipe, like "| cronolog path/to/file.log".
 
 =item binmode :Str
 
 A layer name to be passed to binmode, like ":utf8".
 
 =back
+
+=head1 SEE ALSO
+
+L<Log::Dispatch>
 
 =head1 LICENSE
 
