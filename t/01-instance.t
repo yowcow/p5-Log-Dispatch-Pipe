@@ -11,6 +11,10 @@ my $tmp = tempdir(CLEANUP => 1);
 subtest 'Test new' => sub {
 
     subtest 'Fails when invalid "output_to" is given' => sub {
+        local *STDERR;
+        open STDERR, '>', "${tmp}/stderr"
+            or die "Failed opening file: $!";
+
         dies_ok {
             Log::Dispatch::Pipe->new(
                 min_level   => 'info',

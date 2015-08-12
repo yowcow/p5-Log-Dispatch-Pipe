@@ -41,6 +41,10 @@ END
 subtest 'Test log_message fails' => sub {
 
     subtest 'Fails if output_to is invald' => sub {
+        local *STDERR;
+        open STDERR, '>', "${tmp}/stderr"
+            or die "Failed opening file: $!";
+
         my $log = Log::Dispatch::Pipe->new(
             min_level   => 'info',
             output_to   => 'hogehoge',
