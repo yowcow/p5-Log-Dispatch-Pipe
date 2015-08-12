@@ -1,0 +1,45 @@
+use strict;
+use utf8;
+use warnings;
+use File::Temp qw(tempdir);
+use Log::Dispatch::Pipe;
+use Test::Exception;
+use Test::More;
+
+my $tmp = tempdir(CLEANUP => 1);
+
+subtest 'Test new' => sub {
+
+    subtest 'Fails when invalid "output_to" is given' => sub {
+        dies_ok {
+            Log::Dispatch::Pipe->new(
+                min_level   => 'info',
+                output_to   => 'hogefuga',
+                try_at_init => 1,
+                )
+        }
+        qr|Failed opening pipe|;
+    };
+
+    subtest 'Succeeds when invalid but try_at_init => 0' => sub {
+        lives_ok {
+            Log::Dispatch::Pipe->new(
+                min_level   => 'info',
+                output_to   => 'hogefuga',
+                try_at_init => 0,
+                )
+        };
+    };
+
+    subtest 'Succeeds when valid' => sub {
+        lives_ok {
+            Log::Dispatch::Pipe->new(
+                min_level   => 'info',
+                output_to   => "xargs echo >> ${tmp}/test.log",
+                try_at_init => 1,
+                )
+        };
+    };
+};
+
+done_testing;
