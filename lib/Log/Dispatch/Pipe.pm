@@ -45,9 +45,9 @@ sub log_message {
     my ($self, %params) = @_;
 
     $self->{fh} ||= $self->_open_handle;
-    my $fh = $self->{fh};
 
-    syswrite($fh, $params{message});
+    my $fh = $self->{fh};
+    print $fh $params{message};
 }
 
 sub DESTROY {
