@@ -2,7 +2,11 @@ Revision history for Perl extension Log-Dispatch-Pipe
 
 {{$NEXT}}
 
+    - Reuse open file handle
+    - Improve pipe writing test
+    - Add author test to check parallel writing
+
 0.01 2015-08-12T10:35:12Z
 
-    - original version
+    - Original version
 
