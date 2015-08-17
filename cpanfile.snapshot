@@ -83,6 +83,19 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  File-Touch-0.09
+    pathname: N/NE/NEILB/File-Touch-0.09.tar.gz
+    provides:
+      File::Touch 0.09
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.30
+      Fcntl 0
+      File::stat 0
+      IO::File 0
+      strict 0
+      warnings 0
   Log-Dispatch-2.48
     pathname: D/DR/DROLSKY/Log-Dispatch-2.48.tar.gz
     provides:

@@ -31,14 +31,17 @@ subtest 'Test logging with logger' => sub {
 
     my $date = Time::Piece->localtime->strftime('%Y-%m-%d');
 
-    subtest 'Write log' => sub {
+    subtest "Write log in ${tmp}" => sub {
         my $logger = Log::Log4perl::get_logger('hoge');
 
-        ok $logger->info('あいうえお');
-        ok $logger->info('あいうえお');
+        ok $logger->info('あいうえお1');
+        ok $logger->info('あいうえお2');
     };
 
-    subtest 'Check log' => sub {
+    subtest "Check log in ${tmp}" => sub {
+
+        Log::Log4perl::Logger::cleanup();
+
         my $file    = "${tmp}/${date}/hoge.log";
         my $content = do {
             open my $fh, '<', $file or die $!;
@@ -48,8 +51,8 @@ subtest 'Test logging with logger' => sub {
         };
 
         is $content, <<END;
-INFO - あいうえお
-INFO - あいうえお
+INFO - あいうえお1
+INFO - あいうえお2
 END
     };
 };
