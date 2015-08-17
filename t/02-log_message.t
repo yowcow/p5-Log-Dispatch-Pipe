@@ -10,7 +10,7 @@ use Test::More;
 my $tmp = tempdir(CLEANUP => 1);
 
 subtest 'Test log_message output' => sub {
-    my $perl = $^X;
+    my $perl        = $^X;
     my $output_file = "${tmp}/test.log";
     touch $output_file;
 

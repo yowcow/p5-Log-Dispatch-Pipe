@@ -21,15 +21,11 @@ Log::Log4perl::init(\$conf);
 say "Booting server [PID:$$] to log output to ${tmp}";
 
 sub {
-    my $env = shift;
-    my $time = Time::Piece->localtime->strftime('%F %T');
-
+    my $env    = shift;
+    my $time   = Time::Piece->localtime->strftime('%F %T');
     my $logger = Log::Log4perl::get_logger('hoge');
+
     $logger->info("[PID:$$] Got request at ${time}");
 
-    [
-        200,
-        ['Content-Type' => 'text/plain'],
-        ['Hoge'],
-    ];
+    [ 200, [ 'Content-Type' => 'text/plain' ], ['Hoge'], ];
 };
