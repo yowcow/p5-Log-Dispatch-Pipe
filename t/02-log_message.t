@@ -2,6 +2,7 @@ use strict;
 use utf8;
 use warnings;
 use File::Temp qw(tempdir);
+use File::Touch;
 use Log::Dispatch::Pipe;
 use Test::Exception;
 use Test::More;
@@ -9,13 +10,16 @@ use Test::More;
 my $tmp = tempdir(CLEANUP => 1);
 
 subtest 'Test log_message output' => sub {
+    my $perl = $^X;
     my $output_file = "${tmp}/test.log";
+    touch $output_file;
 
     subtest 'Output log' => sub {
         my $log = Log::Dispatch::Pipe->new(
             min_level => 'info',
-            output_to => "xargs echo >> ${output_file}",
+            output_to => "${perl} t/bin/write.pl ${output_file}",
             binmode   => ':utf8',
+            newline   => 1,
         );
 
         ok $log->log(level => 'info', message => 'あいうえお');

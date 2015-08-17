@@ -4,7 +4,9 @@ requires 'Log::Dispatch';
 requires 'Scalar::Util';
 
 on 'test' => sub {
+    requires 'File::Path';
     requires 'File::Temp';
+    requires 'File::Touch';
     requires 'Test::Exception';
     requires 'Test::More', '0.98';
 };
