@@ -70,10 +70,10 @@
          "web" : "https://github.com/yowcow/p5-Log-Dispatch-Pipe"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
-      "Yowcow Ohyama <yowcow@users.noreply.github.com>",
-      "yowcow <yowcow@gmail.com>"
+      "yowcow <yowcow@gmail.com>",
+      "Yowcow Ohyama <yowcow@users.noreply.github.com>"
    ],
    "x_serialization_backend" : "JSON::PP version 2.27203"
 }
