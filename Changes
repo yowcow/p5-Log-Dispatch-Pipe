@@ -2,6 +2,10 @@ Revision history for Perl extension Log-Dispatch-Pipe
 
 {{$NEXT}}
 
+0.03 2015-08-18T07:16:53Z
+
+    - Open pipe file handle safely by calling `open` with 3 arguments
+
 0.02 2015-08-17T13:04:07Z
 
     - Reuse open file handle
