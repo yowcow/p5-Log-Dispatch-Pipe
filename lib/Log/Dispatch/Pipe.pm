@@ -32,7 +32,7 @@ sub _init {
 sub _open_handle {
     my $self = shift;
 
-    open my $fh, '|' . $self->{output_to}
+    open my $fh, '|-', $self->{output_to}
         or die "Failed opening pipe: $!";
 
     binmode $fh, $self->{binmode}
