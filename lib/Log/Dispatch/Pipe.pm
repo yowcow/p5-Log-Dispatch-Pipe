@@ -35,6 +35,10 @@ sub _open_handle {
     open my $fh, '|-', $self->{output_to}
         or die "Failed opening pipe: $!";
 
+    my $oldfh = select $fh;
+    $| = 1;
+    select $oldfh;
+
     binmode $fh, $self->{binmode}
         if $self->{binmode};
 
