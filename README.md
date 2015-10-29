@@ -53,4 +53,4 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-yowcow <yowcow@cpan.org>
+yowcow &lt;yowcow@cpan.org>

@@ -2,6 +2,10 @@ Revision history for Perl extension Log-Dispatch-Pipe
 
 {{$NEXT}}
 
+0.04 2015-10-29T08:18:06Z
+
+    - Do autoflush on file handle
+
 0.03 2015-08-18T07:16:53Z
 
     - Open pipe file handle safely by calling `open` with 3 arguments
