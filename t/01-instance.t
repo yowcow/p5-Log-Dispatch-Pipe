@@ -6,6 +6,8 @@ use Log::Dispatch::Pipe;
 use Test::Exception;
 use Test::More;
 
+plan skip_all => 'No test on Windows' if $^O =~ /^MSWin/i;
+
 my $tmp = tempdir(CLEANUP => 1);
 
 subtest 'Test new' => sub {
