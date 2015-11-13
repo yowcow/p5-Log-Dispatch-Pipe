@@ -2,6 +2,10 @@ Revision history for Perl extension Log-Dispatch-Pipe
 
 {{$NEXT}}
 
+0.05 2015-11-13T04:53:20Z
+
+    - Skip testing on Windows OS
+
 0.04 2015-10-29T08:18:06Z
 
     - Do autoflush on file handle

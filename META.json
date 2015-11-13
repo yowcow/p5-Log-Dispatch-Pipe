@@ -4,7 +4,7 @@
       "yowcow <yowcow@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.0, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -70,7 +70,7 @@
          "web" : "https://github.com/yowcow/p5-Log-Dispatch-Pipe"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_contributors" : [
       "yowcow <yowcow@gmail.com>",
       "Yowcow Ohyama <yowcow@users.noreply.github.com>"
