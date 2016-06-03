@@ -4,7 +4,7 @@
       "yowcow <yowcow@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.0, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.1, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -52,7 +52,6 @@
       "test" : {
          "requires" : {
             "File::Temp" : "0",
-            "File::Touch" : "0",
             "Test::Exception" : "0",
             "Test::More" : "0.98"
          }
@@ -72,8 +71,8 @@
    },
    "version" : "0.05",
    "x_contributors" : [
-      "yowcow <yowcow@gmail.com>",
-      "Yowcow Ohyama <yowcow@users.noreply.github.com>"
+      "Yowcow Ohyama <yowcow@users.noreply.github.com>",
+      "yowcow <yowcow@gmail.com>"
    ],
-   "x_serialization_backend" : "JSON::PP version 2.27203"
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
