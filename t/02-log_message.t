@@ -2,7 +2,6 @@ use strict;
 use utf8;
 use warnings;
 use File::Temp qw(tempdir);
-use File::Touch;
 use Log::Dispatch::Pipe;
 use Test::Exception;
 use Test::More;
@@ -10,6 +9,14 @@ use Test::More;
 plan skip_all => 'No test on Windows' if $^O =~ /^MSWin/i;
 
 my $tmp = tempdir(CLEANUP => 1);
+
+sub touch {
+    my $file = shift;
+    my $now = time;
+    utime($now, $now, $file)
+    || open(my $fh, '>>', $file)
+    || die "touch failed on file: $file";
+}
 
 subtest 'Test log_message output' => sub {
     my $perl        = $^X;

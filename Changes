@@ -2,6 +2,8 @@ Revision history for Perl extension Log-Dispatch-Pipe
 
 {{$NEXT}}
 
+    - Remove dependency on File::Touch
+
 0.05 2015-11-13T04:53:20Z
 
     - Skip testing on Windows OS
